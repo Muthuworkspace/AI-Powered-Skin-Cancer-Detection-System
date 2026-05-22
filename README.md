@@ -156,11 +156,17 @@ Add:
 <img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/52c417c6-1539-4e37-87bf-9459729f1724" />
 
 Future Improvements
+
 Grad-CAM explainability
+
 Cloud deployment
+
 Mobile application integration
+
 Better dataset generalization
+
 Real-time camera prediction
+
 Improved medical explainability
 
 
