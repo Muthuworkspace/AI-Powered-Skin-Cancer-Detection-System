@@ -54,11 +54,9 @@ Dropout Regularization
 Class Weight Balancing
 Early Stopping
 Learning Rate Reduction
-Dataset
 
-Dataset Used:
-
-HAM10000 Dataset
+Dataset:
+HAM10000 Medical DataSet
 
 The dataset contains dermoscopic images of various skin lesion categories.
 
