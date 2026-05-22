@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — DermAI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand">🔬 DermAI</div>
+  <div class="nav-links">
+    <a href="/">Detect</a>
+    <a href="/about" class="active">About</a>
+  </div>
+</nav>
+
+<main class="container">
+
+  <div class="hero">
+    <h1>About This Project</h1>
+    <p class="subtitle">An AI-powered skin lesion classification system built for academic research.</p>
+  </div>
+
+  <div class="about-grid">
+
+    <div class="about-card">
+      <h3>🧠 Model Architecture</h3>
+      <p>Built on <strong>EfficientNet-B0</strong> pretrained on ImageNet, fine-tuned on a 9-class skin lesion dataset. Uses <strong>Test-Time Augmentation (TTA)</strong> over 5 passes to stabilize predictions.</p>
+    </div>
+
+    <div class="about-card">
+      <h3>📊 Dataset</h3>
+      <p>Trained on a combination of <strong>HAM10000</strong> and additional clinical images. Classes include melanoma, BCC, SCC, actinic keratosis, benign keratosis, dermatofibroma, melanocytic nevi, vascular lesions, and normal skin.</p>
+    </div>
+
+    <div class="about-card">
+      <h3>🔬 Detectable Conditions</h3>
+      <ul class="condition-list">
+        <li><span class="dot red"></span> Melanoma</li>
+        <li><span class="dot orange"></span> Basal Cell Carcinoma</li>
+        <li><span class="dot orange"></span> Squamous Cell Carcinoma</li>
+        <li><span class="dot yellow"></span> Actinic Keratosis</li>
+        <li><span class="dot green"></span> Benign Keratosis</li>
+        <li><span class="dot green"></span> Dermatofibroma</li>
+        <li><span class="dot green"></span> Melanocytic Nevi</li>
+        <li><span class="dot green"></span> Vascular Lesion</li>
+        <li><span class="dot teal"></span> Normal Skin</li>
+      </ul>
+    </div>
+
+    <div class="about-card">
+      <h3>⚙️ Tech Stack</h3>
+      <ul class="tech-list">
+        <li>Python 3.10</li>
+        <li>TensorFlow 2.16 + tf_keras</li>
+        <li>EfficientNet-B0</li>
+        <li>OpenCV (image preprocessing)</li>
+        <li>Flask (web framework)</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="disclaimer-box">
+    <strong>⚠️ Medical Disclaimer:</strong>
+    This tool is intended for research and educational purposes only.
+    Always consult a qualified dermatologist for any skin concerns.
+  </div>
+
+</main>
+
+</body>
+</html>

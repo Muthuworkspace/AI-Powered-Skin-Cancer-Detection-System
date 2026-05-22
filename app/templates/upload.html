@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skin Cancer Detector</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand">🔬 DermAI</div>
+  <div class="nav-links">
+    <a href="/" class="active">Detect</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<main class="container">
+
+  <div class="hero">
+    <h1>Skin Lesion Analysis</h1>
+    <p class="subtitle">Upload a skin lesion image for AI-powered analysis across 9 condition types.</p>
+    <p class="disclaimer">⚠️ For research use only — not a substitute for medical diagnosis.</p>
+  </div>
+
+  {% if error %}
+  <div class="alert alert-error">
+    <span>⚠ {{ error }}</span>
+  </div>
+  {% endif %}
+
+  <div class="upload-card">
+    <form action="/predict" method="POST" enctype="multipart/form-data" id="uploadForm">
+
+      <div class="drop-zone" id="dropZone">
+        <div class="drop-icon">🖼️</div>
+        <p class="drop-text">Drag & drop image here</p>
+        <p class="drop-sub">or</p>
+        <label class="btn-browse" for="fileInput">Browse File</label>
+        <input type="file" id="fileInput" name="file" accept=".jpg,.jpeg,.png,.bmp,.webp" hidden />
+        <p class="drop-hint">Supports: JPG, PNG, BMP, WEBP</p>
+      </div>
+
+      <div class="preview-wrap" id="previewWrap" style="display:none;">
+        <img id="previewImg" src="" alt="Preview" />
+        <button type="button" class="btn-clear" id="clearBtn">✕ Remove</button>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submitBtn" disabled>
+        <span class="btn-text">🔍 Analyze Image</span>
+        <span class="btn-loading" style="display:none;">⏳ Analyzing...</span>
+      </button>
+
+    </form>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-icon">🧬</div>
+      <h3>9 Conditions</h3>
+      <p>Detects melanoma, BCC, SCC, actinic keratosis, and more.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">⚡</div>
+      <h3>Fast Results</h3>
+      <p>EfficientNet backbone with test-time augmentation for stable predictions.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🔒</div>
+      <h3>Local & Private</h3>
+      <p>Runs entirely on your machine. No image is sent to any server.</p>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  const dropZone   = document.getElementById("dropZone");
+  const fileInput  = document.getElementById("fileInput");
+  const previewWrap= document.getElementById("previewWrap");
+  const previewImg = document.getElementById("previewImg");
+  const clearBtn   = document.getElementById("clearBtn");
+  const submitBtn  = document.getElementById("submitBtn");
+  const form       = document.getElementById("uploadForm");
+
+  function showPreview(file) {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      previewImg.src = e.target.result;
+      previewWrap.style.display = "block";
+      dropZone.style.display    = "none";
+      submitBtn.disabled        = false;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  fileInput.addEventListener("change", () => showPreview(fileInput.files[0]));
+
+  clearBtn.addEventListener("click", () => {
+    fileInput.value           = "";
+    previewWrap.style.display = "none";
+    dropZone.style.display    = "block";
+    submitBtn.disabled        = true;
+  });
+
+  dropZone.addEventListener("dragover", e => { e.preventDefault(); dropZone.classList.add("drag-over"); });
+  dropZone.addEventListener("dragleave",   () => dropZone.classList.remove("drag-over"));
+  dropZone.addEventListener("drop", e => {
+    e.preventDefault();
+    dropZone.classList.remove("drag-over");
+    const file = e.dataTransfer.files[0];
+    if (file) { fileInput.files = e.dataTransfer.files; showPreview(file); }
+  });
+
+  form.addEventListener("submit", () => {
+    document.querySelector(".btn-text").style.display    = "none";
+    document.querySelector(".btn-loading").style.display = "inline";
+    submitBtn.disabled = true;
+  });
+</script>
+
+</body>
+</html>
