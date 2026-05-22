@@ -1,5 +1,17 @@
 # AI-Powered-Skin-Cancer-Detection-System
 Deep learning web application for skin cancer classification using EfficientNetB0, TensorFlow, and Flask.
+
+
+## Live Demo
+[Add your Render deployment URL here]
+
+## Model File
+
+The trained model file is not included in this repository due to GitHub file size limitations.
+
+Download Model:
+https://drive.google.com/file/d/1CysZpmmVbOR5X29lvgnpZULmDY3lkUGs/view?usp=sharing
+
 Overview
 
 This project is a deep learning based web application designed to classify different types of skin lesions using dermoscopic images. The system uses EfficientNetB0 transfer learning architecture along with image preprocessing and test-time augmentation techniques to improve prediction performance.
@@ -120,7 +132,6 @@ AI-Powered-Skin-Cancer-Detection-System/
 
 ├── .gitignore
 
-└── Procfile
 
 
 
