@@ -3,3 +3,4 @@ tf-keras==2.16.0
 flask==3.0.3
 numpy==1.26.4
 opencv-python-headless
+gunicorn
