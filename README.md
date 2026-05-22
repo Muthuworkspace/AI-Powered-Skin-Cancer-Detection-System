@@ -100,12 +100,6 @@ AI-Powered-Skin-Cancer-Detection-System/
 
 │     └── static/
 
-│
-
-├── models/
-
-│     ├── skin_model.keras
-
 │     └── class_names.json
 
 │
