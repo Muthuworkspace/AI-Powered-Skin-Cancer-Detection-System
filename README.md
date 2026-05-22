@@ -125,8 +125,11 @@ AI-Powered-Skin-Cancer-Detection-System/
 └── Procfile
 
 
+
 Installation
+
 Clone Repository
+
 git clone https://github.com/Muthuworkspace/AI-Powered-Skin-Cancer-Detection-System.git
 
 Move to Project Folder
