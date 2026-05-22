@@ -78,23 +78,25 @@ Dataset Link:
 HAM10000 Dataset
 
 Project Structure
-skin-cancer-detection/
+AI-Powered-Skin-Cancer-Detection-System/
 
 │
+
 ├── app/
 
-│   ├── app.py
+│     ├── app.py
 
-│   ├── templates/
+│     ├── templates/
 
-│   └── static/
+│     └── static/
 
 │
+
 ├── models/
 
-│   ├── skin_model.keras
+│     ├── skin_model.keras
 
-│   └── class_names.json
+│     └── class_names.json
 
 │
 
