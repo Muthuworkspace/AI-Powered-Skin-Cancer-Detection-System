@@ -82,26 +82,46 @@ skin-cancer-detection/
 
 │
 ├── app/
+
 │   ├── app.py
+
 │   ├── templates/
+
 │   └── static/
+
 │
 ├── models/
+
 │   ├── skin_model.keras
+
 │   └── class_names.json
+
 │
+
 ├── notebooks/
+
 │
+
 ├── outputs/
+
 │
+
 ├── src/
+
 │
+
 ├── dataset/
+
 │
+
 ├── requirements.txt
+
 ├── README.md
+
 ├── .gitignore
+
 └── Procfile
+
 
 Installation
 Clone Repository
