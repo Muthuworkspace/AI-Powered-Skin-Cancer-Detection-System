@@ -79,6 +79,7 @@ HAM10000 Dataset
 
 Project Structure
 skin-cancer-detection/
+
 │
 ├── app/
 │   ├── app.py
