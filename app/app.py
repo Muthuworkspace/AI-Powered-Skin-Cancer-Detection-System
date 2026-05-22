@@ -21,7 +21,23 @@ from flask import Flask, request, render_template, redirect, url_for
 # PATHS  (everything relative to this file — works on any PC)
 # ─────────────────────────────────────────────────────────────
 BASE_DIR     = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH   = os.path.join(BASE_DIR, "skin_cancer_model.h5")
+import gdown
+
+MODEL_PATH = os.path.join(BASE_DIR, "skin_cancer_model.h5")
+
+# Download model automatically if missing
+if not os.path.exists(MODEL_PATH):
+
+    print("Model not found. Downloading from Google Drive...")
+
+    file_id = "YOUR_GOOGLE_DRIVE_FILE_ID"
+
+    url = f"https://drive.google.com/uc?id={file_id}"
+
+    gdown.download(url, MODEL_PATH, quiet=False)
+
+    print("Model downloaded successfully!")
+
 CLASS_JSON   = os.path.join(BASE_DIR, "class_names.json")
 UPLOAD_DIR   = os.path.join(BASE_DIR, "static", "uploads")
 
