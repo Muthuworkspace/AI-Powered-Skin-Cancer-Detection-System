@@ -118,14 +118,6 @@ AI-Powered-Skin-Cancer-Detection-System/
 
 │
 
-├── src/
-
-│
-
-├── dataset/
-
-│
-
 ├── requirements.txt
 
 ├── README.md
