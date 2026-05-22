@@ -30,7 +30,7 @@ if not os.path.exists(MODEL_PATH):
 
     print("Model not found. Downloading from Google Drive...")
 
-    file_id = "YOUR_GOOGLE_DRIVE_FILE_ID"
+    file_id = "1CysZpmmVbOR5X29lvgnpZULmDY3lkUGs"
 
     url = f"https://drive.google.com/uc?id={file_id}"
 
