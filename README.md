@@ -3,7 +3,7 @@ Deep learning web application for skin cancer classification using EfficientNetB
 
 
 ## Live Demo
-[Add your Render deployment URL here]
+https://ai-powered-skin-cancer-detection-system-2.onrender.com/
 
 ## Model File
 
